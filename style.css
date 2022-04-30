@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #DDA77B;
+}
+header section.content {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 10vh;
+}
+header section#grad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background-image: linear-gradient(#71667C, transparent);
+    z-index: 50;
+}
+footer section#grad2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background-image: linear-gradient(transparent, #71667C);
+    z-index: 50;
+}
+header section.content::before {
+    display: none;
+}
+header section.content::after {
+    display: none;
+}
+section.content {
+    margin-top: 32vh;
+    display: block;
+    position: -webkit-sticky;
+position: -moz-sticky;
+position: -o-sticky;
+position: -ms-sticky;
+position: sticky;
+    background-color: #71677C;
+    width: 100%;
+    border-top-left-radius: 3vh;
+    padding: 2vh;
+    height: 30vh;
+    transition: all ease 0.5s;
+    z-index: 10;
+}
+section.content.y {
+    border-top-right-radius: 3vh;
+    top: 20vh;
+}
+section.content.z {
+    border-bottom-right-radius: 3vh;
+    top: 49vh;
+}
+section.content::before {
+    display: block;
+    position: relative;
+    bottom: -28vh;
+    left: -2vh;
+    width: 6vh;
+    height: 6vh;
+    background-color: #71677C;
+    content: "";
+    z-index: -1;
+    transition: all ease 0.5s;
+}
+section.content::after {
+    display: block;
+    position: relative;
+    bottom: -22vh;
+    left: -2vh;
+    width: 6vh;
+    height: 6vh;
+    background-color: #DDA77B;
+    content: "";
+    z-index: -1;
+    border-top-left-radius: 3vh;
+    transition: all ease 0.5s;
+}
+header section a button {
+    position: relative;
+    display: inline-block;
+    border: 0.5vh solid #DDA77B;
+    background-color: #DDA77B;
+    color: #71677C;
+    border-radius: 0.5vh;
+    font-style: bolder;
+    font-size: 3vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    transition: all ease 0.8s;
+    height: 6vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+header section.content:hover {
+    padding: 2.5vh;
+    height: 11vh;
+}
+header section.content:hover::before {
+    top: 11vh;
+}
+header section.content:hover::after {
+    top: 11vh;
+}
+header section a button:hover {
+    background-color: #71677C;
+    color: #DDA77B;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    margin-left: 0;
+    margin-right: 0;
+}
+section#main-image img {
+    position: fixed;
+    margin-left: 6vh;
+    margin-top: 10vh;
+    width: calc(100vw - 12vh);
+}
+section.space {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 30vh;
+}
+section.container {
+    display: block;
+}
