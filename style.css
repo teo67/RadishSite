@@ -16,7 +16,7 @@ nav {
     left: 5vw;
     right: 5vw;
     z-index: 100;
-    background-color: #71667C;
+    background-color: #2A5A39;
     width: 90vw;
     transition: all ease 0.5s;
     text-align: center;
@@ -112,7 +112,7 @@ nav a button {
     display: inline-block;
     border: 0.5vh solid #DDA77B;
     background-color: #DDA77B;
-    color: #71677C;
+    color: #2A5A39;
     border-radius: 0.5vh;
     font-style: bolder;
     font-size: 2vh;
@@ -127,7 +127,7 @@ nav:hover {
    padding-top: 2vh;
 }
 nav a button:hover {
-    background-color: #71677C;
+    background-color: #2A5A39;
     color: #DDA77B;
     padding-left: 2vh;
     padding-right: 2vh;
@@ -169,4 +169,52 @@ section.content.y h1 {
 }
 section.content.z h1 {
     color: #982745;
+}
+body main p.code {
+    display: inline-block;
+    font-weight: lighter;
+    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+    font-size: 75%;
+    line-height: 150%;
+    color: #E0E0E0;
+    background: #666666;
+    overflow: hidden;
+    border-radius: 1vh;
+    padding: 1vh;
+    transform: translateY(2vh);
+    border: 1px solid #666666;
+    transition: all ease 0.5s;
+}
+body main p.code span {
+    display: none;
+    background-color: inherit;
+    color: inherit;
+    border: 1px solid #666666;
+    border-radius: 1vh;
+    margin-left: 1vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    cursor: pointer;
+    transition: border-radius ease 0.5s;
+}
+body main p.code span:hover {
+    border-radius: 1.5vh;
+}
+body main p.code button:hover {
+    padding: 1.2vh;
+}
+body main p.code:hover {
+    background: #E0E0E0;
+    color: #666666;
+}
+body main p.code span::after {
+    display: none;
+    content: " { copied! }";
+    color: #4DA167;
+}
+body main p.code span.copied::after {
+    display: inline;
+}
+body main p.code:hover span {
+    display: inline-block;
 }

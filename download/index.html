@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--  -->
+<html lang="en">
+    <head>
+        <link href='../style.css' rel='stylesheet'>
+        <link href="./style.css" rel='stylesheet'>
+        <title>Radish</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../"><button>Home</button></a>
+                <a href="./"><button>Download</button></a>
+                <a href="../documentation/"><button>Documentation</button></a>
+                <a href="./index.html"><button>Examples</button></a>
+            </nav>
+            <!--<section id="grad"></section>-->
+        </header>
+        <main>
+            <section id="main-image">
+                <img src="../logo.png"></img>
+            </section>
+
+            <section class="instruction">
+                <h1>Step 1: Download Package</h1>
+                <p>Visit the <a href="https://github.com/teo67/Radish/releases" target="_blank">releases</a> page on Radish's GitHub to find the latest download for your platform. Current supported platforms include:<br></p>
+                    <ul>
+                        <li>Windows x64</li>
+                        <li>Windows x86</li>
+                        <li>Windows arm</li>
+                        <li>Windows arm64</li>
+                        <li>OSX (Mac) x64</li>
+                        <li>Linux x64</li>
+                        <li>Linux arm</li>
+                        <li>Linux arm64</li>
+
+                    </ul>
+                <p>If you're running Windows x64, download the installer (exe) rather than the zip file for a simpler installation.</p>
+            </section>
+            <section class="instruction">
+                <h1>Step 2: Download .NET</h1>
+                <p>Radish is written in C#, which means that it runs using the .NET runtime. Go to Microsoft's .NET <a href="https://dotnet.microsoft.com/en-us/download" target="_blank">downloads page</a> and select the most recent SDK for your OS. Follow the instructions in the installer to finish installing .NET.</p>
+            </section>
+            <section class="instruction">
+                <h1>If Using The Windows x64 Installer...</h1>
+                <ol>
+                    <li>Open the .exe file - your machine will probably warn you against it, but you can click "More Info" to bypass that</li>
+                    <li>Follow the prompts in the installer to complete your installation of Radish</li>
+                    <li>Refresh your PATH variable by opening the following:<p class="code">Edit the System Environmental Variables -> Environment Variables... -> System Variables -> Path (double click to open)<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Click "Ok" on all of the opened windows to close them</li>
+                    <li>All done! Try using the command "radish" in your terminal. It should output something like this:<p class="code">Error initiating program: Could not find file [path to main.rdsh file]<span onclick="copy(this)">copy text</span></p></li>
+                </ol>
+            </section>
+            <section class="instruction">
+                <h1>If Using Windows...</h1>
+                <ol>
+                    <li>Find the .zip file in your Downloads folder</li>
+                    <li>Right click on the file and select "Extract All" to unzip it</li>
+                    <li>Click "Browse" and select your Program Files (x86) folder in the C: directory</li>
+                    <li>Provide administrator permissions if necessary</li>
+                    <li>Open the following window:<p class="code">Edit the System Environmental Variables -> Environment Variables... -> System Variables -> Path (double click to open)<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Click "New" and enter the following:<p class="code">C:\Program Files (x86)\Radish\<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Click "Ok" on all of the opened windows to close them</li>
+                    <li>Nice job! Try using the command "radish" in your terminal. It should output something like this:<p class="code">Error initiating program: Could not find file [path to main.rdsh file]<span onclick="copy(this)">copy text</span></p></li>
+                </ol>
+            </section>
+            <section class="instruction">
+                <h1>If Using Mac OSX...</h1>
+                <ol>
+                    <li>Find the .zip file in your Downloads folder</li>
+                    <li>Double click on the file to unzip it automatically</li>
+                    <li>Open a new Finder window</li>
+                    <li>Press Command+Shift+G and search for the following:<p class="code">/usr/local<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Drag the new Radish folder in your Downloads into usr/local. You may need to enter your password to do so</li>
+                    <li>Open Terminal</li>
+                    <li>Enter the following:<p class="code">echo /usr/local/Radish|sudo tee /etc/paths.d/radish;bash -l;echo $PATH<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Enter your password if required</li>
+                    <li>You're all set! Try using the command "radish" in your terminal. It should output something like this:<p class="code">Error initiating program: Could not find file [path to main.rdsh file]<span onclick="copy(this)">copy text</span></p></li>
+                </ol>
+            </section>
+            <section class="instruction">
+                <h1>If Using Linux...</h1>
+                <p>Note that different Linux distributions may differ in how they load the PATH variable. If this doesn't work on your system, do some research into setting .bashrc, /etc/environment.d/*.conf, and /etc/profile.d/*.</p>
+                <ol>
+                    <li><p class="code">cd downloads<span onclick="copy(this)">copy text</span></p></li>
+                    <li><p class="code">unzip [name of zip file]<span onclick="copy(this)">copy text</span></p> - note that you may need to install the unzip tool to use this command</li>
+                    <li><p class="code">cd [name of unzipped folder]<span onclick="copy(this)">copy text</span></p></li>
+                    <li><p class="code">sudo cp Radish /usr/local<span onclick="copy(this)">copy text</span></p></li>
+                    <li><p class="code">nano ~/etc/environment<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Add the following to the end of the environment file:<p class="code">export PATH="/usr/local/Radish:$PATH"<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Press Ctrl+S, then Ctrl+X to save and exit</li>
+                    <li><p class="code">source ~/env/environment<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Awesome! Try using the command "radish" in your terminal. It should output something like this:<p class="code">Error initiating program: Could not find file [path to main.rdsh file]<span onclick="copy(this)">copy text</span></p></li>
+                </ol>
+            </section>
+            <section class="space"></section>
+            <section class="space"></section>
+        </main>
+        <footer>
+            <nav>
+                <a href="https://github.com/teo67/Radish" target="_blank"><button>GitHub</button></a>
+                <a href="https://github.com/teo67/RadishExtension" target="_blank"><button>VSCode Extension</button></a>
+                <a href="https://github.com/teo67/Soil" target="_blank"><button>Color Extension</button></a>
+                <a href="https://github.com/teo67/RadishSite" target="_blank"><button>Site GitHub</button></a>
+            </nav>
+        </footer>
+        <script src="../main.js"></script>
+    </body>
+</html>

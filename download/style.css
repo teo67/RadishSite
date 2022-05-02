@@ -1,0 +1,102 @@
+section.instruction {
+    position: relative;
+    display: block;
+    margin-left: 5vw;
+    width: 90vw;
+    background-color: #DDA77B;
+    border: 1vh solid #2A5A39;
+    border-radius: 3vh;
+    margin-top: 20vh;
+    overflow-wrap: break-word;
+    padding: 2vh;
+    transition: all ease 0.5s;
+}
+section.instruction::after {
+    position: relative;
+    display: block;
+    content: "";
+    border: 1vh solid #2A5A39;
+    width: calc(90vw - 10vh);
+    margin-left: 1vh;
+    border-radius: 3vh;
+    transform: translateY(6vh);
+    height: 5vh;
+    background-color: #DDA77B;
+    transition: all ease 0.5s;
+}
+section.instruction::before {
+    position: relative;
+    display: block;
+    content: "";
+    border: 1vh solid #2A5A39;
+    width: calc(90vw - 10vh);
+    margin-left: 1vh;
+    border-radius: 3vh;
+    transform: translateY(-6vh);
+    height: 5vh;
+    background-color: #DDA77B;
+    transition: all ease 0.5s;
+}
+section.instruction h1 {
+    font-weight: bolder;
+    color: #8A1B66;
+    font-size: 7vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+}
+section.instruction h1::before {
+    position: relative;
+    display: inline-block;
+    content: "";
+    margin-right: 1vw;
+    transform: translateY(-0.875vh);
+    width: 0; 
+    height: 0; 
+    border-top: 1.75vh solid transparent;
+    border-bottom: 1.75vh solid transparent;
+    transition: all ease 0.5s;
+    border-left: 1.75vh solid #8A1B66;
+}
+section.instruction p {
+    color: #982745;
+    font-weight: bold;
+    font-size: 3vh;
+    margin-left: 1vw;
+}
+section.instruction a {
+    color: #8A1B66;
+    transition: all ease 0.3s;
+    font-style: italic;
+    text-decoration: none;
+}
+section.instruction a:hover {
+    color: #2A5A39;
+}
+section.instruction ul, section.instruction ol {
+    margin-left: 5vw;
+    font-size: 3vh;
+    font-weight: bolder;
+}
+section.instruction ul {
+    color: #8A1B66;
+}
+section.instruction ol {
+    color: #982745;
+}
+section.instruction li {
+    padding: 1vh;
+    transition: all ease 0.5s;
+}
+section.instruction:hover::before {
+    background-color: #4DA167;
+    height: 3vh;
+    transform: translateY(-5vh);
+}
+section.instruction:hover::after {
+    background-color: #4DA167;
+    height: 3vh;
+    transform: translateY(5vh);
+}
+section.instruction h1:hover::before {
+    margin-left: 2vw;
+}
