@@ -170,6 +170,9 @@ section.content.y h1 {
 section.content.z h1 {
     color: #982745;
 }
+html {
+    scroll-behavior: smooth;
+}
 body main p.code {
     display: inline-block;
     font-weight: lighter;
