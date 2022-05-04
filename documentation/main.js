@@ -56,7 +56,28 @@ const features = [
 
     new Feature("end, cancel, continue", "These keywords terminate processes without returning a value. The end keyword is used to terminate a function, and the cancel keyword is used to terminate a loop (similar to break). The continue keyword terminates the current run of the loop but does not end the loop altogether.", 
     "end | cancel | continue", 
-    "dig badFunction plant tool() {\n\xa0end\n\xa0holler(\"yay!\")\n}\nbadFunction()\n# no output #\n\nfor(dig i plant 1, i < 20, i++) {\n\xa0if(i % 10 == 0) {\n\xa0\xa0cancel\n\xa0} else if(i % 5 == 0) {\n\xa0\xa0continue\n\xa0}\n\xa0holler(i)\n}\n# output:\n1\n2\n3\n4\n6\n7\n8\n9 #", null)
+    "dig badFunction plant tool() {\n\xa0end\n\xa0holler(\"yay!\")\n}\nbadFunction()\n# no output #\n\nfor(dig i plant 1, i < 20, i++) {\n\xa0if(i % 10 == 0) {\n\xa0\xa0cancel\n\xa0} else if(i % 5 == 0) {\n\xa0\xa0continue\n\xa0}\n\xa0holler(i)\n}\n# output:\n1\n2\n3\n4\n6\n7\n8\n9 #", null), 
+
+    new Feature("plant/harvest properties", "Similar to get and set properties in other languages, this syntax can be used to assign functions to be called when using or setting a certain variable. In the plant function, you may use the variable 'input' to refer to the planted value passed in to the function. Note that variables do not require both a plant and a harvest method, so part of the syntax above is optional.", 
+    "dig %variable name% { plant { %any number of expressions% } harvest { %any number of expressions% } }", 
+    "dig _height plant 0\ndig height {\n\xa0plant {\n\xa0\xa0if(input < 1) {\n\xa0\xa0\xa0holler(\"You can't shrink!\")\n\xa0\xa0\xa0end\n\xa0\xa0}\n\xa0\xa0holler(\"You grew!\")\n\xa0\xa0_height += input\n\xa0}\n\xa0harvest {\n\xa0\xa0harvest _height\n\xa0}\n}\nheight plant 4\nholler(height)\n# output: You grew!\n4 #", ["plant | p", "harvest | h"]), 
+
+    new Feature("throw", "Manually throw an error with a string attached to describe it. This will terminate the running process.", "throw %expression interpreted as string%", 
+    "dig age plant -1\nif(age < 0) {\n\xa0throw \"That doesn't make any sense!\"\n}\n# error output: That doesn't make any sense! #", ["try/catch"]), 
+
+    new Feature("try/catch", "You can use try/catch statements to handle errors without completely terminating the program. In the body of the catch method, you may use the variable 'error' to refer to the error thrown as a string.", 
+    "try { %any number of expressions% } catch { %any number of expressions% }", 
+    "try {\n\xa0throw \"Throwing an error!!\"\n} catch {\n\xa0holler(\"Something went wrong: \" + error)\n}\n# output: Something went wrong: Throwing an error!! #", ["throw"]), 
+
+    new Feature("import", "Use variables from other files in order to improve organization. In order to export various variables from a file so that they can be later imported, simply use the harvest | h syntax as if the entire file were a function.", 
+    "import %expression interpreted as string (should be the name of the file)%", 
+    "# stuff.rdsh #\ndig specialNumber plant 3.14\nharvest specialNumber\n# end of file #\n\n# in main.rdsh #\ndig stuff plant import \"stuff.rdsh\"\nholler(stuff)\n# end of file #\n\n# output: 3.14 #", null), 
+
+    new Feature("all", "This special keyword references every variable at the top level of the stack and returns them all as a collective object. This is especially useful when exporting from a file, as you can simply use 'harvest all' to refer to every variable declared on the surface of the file.", 
+    "all", 
+    "# stuff.rdsh #\ndig amountOfStuff plant 5\ndig things plant [\"apple\", \"banana\", \"teddy bear\", \"pen\", \"pencil\"]\nharvest all\n# end of file #\n\n# main.rdsh #\ndig stuff plant import \"stuff.rdsh\"\nholler(stuff.things[1])\n# end of file #\n\n# output: banana #"), 
+
+    
 ];
 const init = () => {
     for(const feature of features) {

@@ -1,9 +1,2 @@
-for(dig i plant 1, i < 20, i++) {
-    if(i % 10 == 0) {
-        cancel
-    } elseif(i % 5 == 0) {
-        continue
-    }
-    holler(i)
-}
-# output:12346789 #
+dig stuff plant import "stuff.rdsh"
+holler(stuff)
