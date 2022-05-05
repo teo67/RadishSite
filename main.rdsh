@@ -1,2 +1,24 @@
-dig stuff plant import "stuff.rdsh"
-holler(stuff)
+dig badFunction plant tool() {
+ end
+ holler("yay!")
+}
+badFunction()
+# no output #
+
+for(dig i plant 1, i < 20, i++) {
+ if(i % 10 == 0) {
+  cancel
+ } elseif(i % 5 == 0) {
+  continue
+ }
+ holler(i)
+}
+# output:
+1
+2
+3
+4
+6
+7
+8
+9 #

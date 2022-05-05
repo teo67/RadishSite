@@ -131,3 +131,91 @@ section.feature section.similar a:hover {
     color: #2A5A39;
     background-color: #4DA167;
 }
+input#search {
+    position: relative;
+    display: inline-block;
+    border: 0.5vh solid #DDA77B;
+    background-color: #DDA77B;
+    color: #2A5A39;
+    border-radius: 0.5vh;
+    font-style: bolder;
+    font-size: 2vh;
+    margin: 1vh;
+    transition: all ease 0.8s;
+    height: 6vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    animation-name: pop-in;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+@keyframes pop-in {
+    0% { border-color: #D55676; border-width: 2vh; margin: -0.5vh; }
+}
+input#search::placeholder {
+    color: #2A5A39;
+}
+input#search:hover {
+    background-color: #2A5A39;
+    color: #DDA77B;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    margin-left: 0;
+    margin-right: 0;
+}
+input#search:hover::placeholder {
+    color: #DDA77B;
+}
+section#searchblock {
+    display: inline;
+    position: relative;
+}
+section#results {
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 2vh;
+    width: auto;
+    background-color: #4DA167;
+    transition: all ease 0.5s;
+}
+section#resultsblock {
+    display: block;
+    position: absolute;
+    top: 4vh;
+    left: 1vh;
+}
+section#results p.result {
+    color: #4DA167;
+    font-weight: bold;
+    background-color: #2A5A39;
+    border-radius: 1vh;
+    border: 0 solid #D55676;
+    margin: 1vh;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    display: block;
+    cursor: pointer;
+    transition: all ease 0.1s;
+}
+section#results p.result strong {
+    color: #D55676;
+    transition: all ease 0.5s;
+}
+section#results:hover {
+    background: #2A5A39;
+}
+section#results:hover p.result {
+    background-color: #4DA167;
+    color: #2A5A39;
+}
+section#results p.result:hover {
+    border-width: 0.5vh;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+}
