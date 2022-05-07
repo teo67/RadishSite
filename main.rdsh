@@ -1,24 +1,18 @@
-dig badFunction plant tool() {
- end
- holler("yay!")
+dig primes plant []
+dig run plant tool(current) {
+    for(dig i plant 0, i < primes.length, i++) {
+        if(primes[i] * primes[i] > current) {
+            cancel
+        }
+        if(current % primes[i] == 0) {
+            harvest no
+        }
+    }
+    harvest yes
 }
-badFunction()
-# no output #
-
-for(dig i plant 1, i < 20, i++) {
- if(i % 10 == 0) {
-  cancel
- } elseif(i % 5 == 0) {
-  continue
- }
- holler(i)
+for(dig i plant 2, yes, i++) {
+    if(run(i)) {
+        primes.push(i)
+        holler(i)
+    }
 }
-# output:
-1
-2
-3
-4
-6
-7
-8
-9 #

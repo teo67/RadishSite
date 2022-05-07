@@ -38,18 +38,21 @@ section.instruction::before {
     transition: all ease 0.5s;
 }
 section.instruction h1 {
+
     font-weight: bolder;
     color: #8A1B66;
-    font-size: 7vh;
+    font-size: 5vh;
+    overflow: hidden;
     margin-left: 2vw;
     margin-bottom: 2vh;
 }
 section.instruction h1::before {
+    
     position: relative;
     display: inline-block;
     content: "";
     margin-right: 1vw;
-    transform: translateY(-0.875vh);
+    transform: translateY(-0.625);
     width: 0; 
     height: 0; 
     border-top: 1.75vh solid transparent;
@@ -64,6 +67,7 @@ section.instruction p {
     margin-left: 1vw;
 }
 section.instruction a {
+    
     color: #8A1B66;
     transition: all ease 0.3s;
     font-style: italic;

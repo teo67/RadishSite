@@ -77,6 +77,7 @@
                     <li>Open Terminal</li>
                     <li>Enter the following:<p class="code">echo /usr/local/Radish|sudo tee /etc/paths.d/radish;bash -l;echo $PATH<span onclick="copy(this)">copy text</span></p></li>
                     <li>Enter your password if required</li>
+                    <li>Enter this in order to grant executive permissions to the radish executable:<p class="code">chmod +x /usr/local/Radish/radish<span onclick="copy(this)">copy text</span></p></li>
                     <li>You're all set! Try using the command "radish" in your terminal. It should output something like this:<p class="code">Error initiating program: Could not find file [path to main.rdsh file]<span onclick="copy(this)">copy text</span></p></li>
                 </ol>
             </section>
@@ -88,10 +89,6 @@
                     <li><p class="code">unzip [name of zip file]<span onclick="copy(this)">copy text</span></p> - note that you may need to install the unzip tool to use this command</li>
                     <li><p class="code">cd [name of unzipped folder]<span onclick="copy(this)">copy text</span></p></li>
                     <li><p class="code">sudo cp Radish /usr/local<span onclick="copy(this)">copy text</span></p></li>
-                    <li><p class="code">nano ~/etc/environment<span onclick="copy(this)">copy text</span></p></li>
-                    <li>Add the following to the end of the environment file:<p class="code">export PATH="/usr/local/Radish:$PATH"<span onclick="copy(this)">copy text</span></p></li>
-                    <li>Press Ctrl+S, then Ctrl+X to save and exit</li>
-                    <li><p class="code">source ~/env/environment<span onclick="copy(this)">copy text</span></p></li>
                     <li>Awesome! Try using the command "radish" in your terminal. It should output something like this:<p class="code">Error initiating program: Could not find file [path to main.rdsh file]<span onclick="copy(this)">copy text</span></p></li>
                 </ol>
             </section>

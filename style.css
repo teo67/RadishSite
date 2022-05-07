@@ -7,6 +7,7 @@
 
 html {
     background-color: #DDA77B;
+    max-width: 100%;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -143,6 +144,7 @@ section#main-image img {
     height: calc(90vw - 12vh);
     background-repeat: repeat;
     max-height: 80vh;
+    z-index: -1;
 }
 section.space {
     display: block;
@@ -173,8 +175,15 @@ section.content.z h1 {
 html {
     scroll-behavior: smooth;
 }
+section.smallspace {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 20vh;
+}
 body main p.code {
     display: inline-block;
+    max-width: 100%;
     font-weight: lighter;
     font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
     font-size: 75%;
@@ -187,6 +196,8 @@ body main p.code {
     transform: translateY(2vh);
     border: 1px solid #666666;
     transition: all ease 0.5s;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 body main p.code span {
     display: none;

@@ -19,8 +19,8 @@ section.feature::after {
     display: block;
     content: "";
     border: 1vh solid #8A1B66;
-    width: 5vh;
-    right: -4vh;
+    width: 3vw;
+    right: calc(-1.5vh - 1.5vw);
     bottom: 4vh;
     border-radius: 3vh;
     height: calc(100% - 10vh);
@@ -32,8 +32,8 @@ section.feature::before {
     display: block;
     content: "";
     border: 1vh solid #8A1B66;
-    width: 5vh;
-    left: -4vh;
+    width: 3vw;
+    left: calc(-1.5vh - 1.5vw);
     top: 4vh;
     border-radius: 3vh;
     height: calc(100% - 10vh);
@@ -42,13 +42,13 @@ section.feature::before {
 }
 section.feature:hover::before {
     background-color: #D55676;
-    width: 3vh;
-    left: -3vh;
+    width: 2vw;
+    left: calc(-1.5vh - 1vw);
 }
 section.feature:hover::after {
     background-color: #D55676;
-    width: 3vh;
-    right: -3vh;
+    width: 2vw;
+    right: calc(-1.5vh - 1vw);
 }
 section.feature:hover {
     padding-left: 5vh;
@@ -56,7 +56,7 @@ section.feature:hover {
 }
 section.feature h1 {
     color: #2A5A39;
-    font-size: 7vh;
+    font-size: 4vh;
     display: inline;
 }
 section.feature p.code.example::before {
@@ -97,7 +97,7 @@ section.feature p.code:not(.example) span {
     cursor: default;
 }
 section.feature p.code {
-    transform: none;
+    transform: translateY(2vh);
     font-size: 100%;
 }
 section.feature p.code.example {
