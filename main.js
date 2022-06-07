@@ -14,14 +14,19 @@ const copy = (obj, ignore = false) => {
 }
 
 const spawnLeaf = () => {
+    if(document.hidden) {
+        return;
+    }
     const newE = document.createElement("div");
     newE.style.top = `${Math.round(Math.random() * window.innerHeight * 1.5)}px`;
     newE.style.opacity = `${Math.floor(20 + Math.random() * 30)}%`;
     newE.style.animationDuration = `${4 + Math.random() * 20}s`;
-    newE.onanimationend = () => {
-        newE.remove();
-    }
+    
     leaves.appendChild(newE);
+}
+
+leaves.onanimationend = e => {
+    e.target.remove();
 }
 
 setInterval(spawnLeaf, 200);
