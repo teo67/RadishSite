@@ -20,6 +20,7 @@
         </header>
         <main>
             <section id="main-image">
+                <img src="../background.png" id="background"></img>
                 <img src="../logo.png"></img>
             </section>
 
@@ -75,9 +76,9 @@
                     <li>Press Command+Shift+G and search for the following:<p class="code">/usr/local<span onclick="copy(this)">copy text</span></p></li>
                     <li>Drag the new Radish folder in your Downloads into usr/local. You may need to enter your password to do so</li>
                     <li>Open Terminal</li>
-                    <li>Enter the following:<p class="code">echo /usr/local/Radish|sudo tee /etc/paths.d/radish;bash -l;echo $PATH<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Enter the following:<p class="code">echo /usr/local/Radish/bin|sudo tee /etc/paths.d/radish;bash -l;echo $PATH<span onclick="copy(this)">copy text</span></p></li>
                     <li>Enter your password if required</li>
-                    <li>Enter this in order to grant executive permissions to the radish executable:<p class="code">chmod +x /usr/local/Radish/radish<span onclick="copy(this)">copy text</span></p></li>
+                    <li>Enter this in order to grant executive permissions to the radish executable:<p class="code">chmod +x /usr/local/Radish/bin/radish<span onclick="copy(this)">copy text</span></p></li>
                     <li>You're all set! Try using the command "radish" in your terminal. It should output something like this:<p class="code">Error initiating program: Could not find file [path to main.rdsh file]<span onclick="copy(this)">copy text</span></p></li>
                 </ol>
             </section>
@@ -98,8 +99,8 @@
         <footer>
             <nav>
                 <a href="https://github.com/teo67/Radish" target="_blank"><button>GitHub</button></a>
-                <a href="https://github.com/teo67/radish-extension" target="_blank"><button>VSCode Extension</button></a>
-                <a href="https://github.com/teo67/Soil" target="_blank"><button>Color Extension</button></a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=TheoGerst.radish-language-extension" target="_blank"><button>VSCode Extension</button></a>
+                <a href="https://github.com/teo67/radish-extension" target="_blank"><button>Extension GitHub</button></a>
                 <a href="https://github.com/teo67/RadishSite" target="_blank"><button>Site GitHub</button></a>
             </nav>
         </footer>
