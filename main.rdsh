@@ -1,18 +1,7 @@
-dig primes plant []
-dig run plant tool(current) {
-    for(dig i plant 0, i < primes.length, i++) {
-        if(primes[i] * primes[i] > current) {
-            cancel
-        }
-        if(current % primes[i] == 0) {
-            harvest no
-        }
-    }
-    harvest yes
-}
-for(dig i plant 2, yes, i++) {
-    if(run(i)) {
-        primes.push(i)
-        holler(i)
-    }
-}
+dig myValue plant (1, "cadabra", yes)
+holler(myValue / 2)
+holler("abra" + myValue)
+holler(myValue ? "yay", "nay")
+# output: 0.5
+abracadabra
+yay #
