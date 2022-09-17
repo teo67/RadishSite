@@ -1,0 +1,2 @@
+d drawing p Drawing.generateQR("https://radishpl.com", 1)
+h drawing # only 326 bytes! #

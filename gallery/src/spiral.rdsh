@@ -1,0 +1,14 @@
+new Drawing(201, 201) => drawing
+20 => w
+drawing.iterateOver(t(x, y) {
+    d val p ((x - y) ** 2) * 0.0127
+    h new Drawing.RGB(((100 - x) ** 2) * 0.0255, val > 255 ? 255, val, ((100 - y) ** 2) * 0.0255)
+})
+while w < 200 {
+    drawing.ellipse(100, 100, w - 10, w - 10, 255, no, 0, math.constants.pi)
+    drawing.ellipse(105, 100, w, w, 255, no, math.constants.pi, 0)
+    drawing.ellipse(105, 100, w - 10, w - 10, 255 * 65536, no, math.constants.pi, 0)
+    drawing.ellipse(100, 100, w, w, 255 * 65536, no, 0, math.constants.pi)
+    w += 20
+}
+h drawing

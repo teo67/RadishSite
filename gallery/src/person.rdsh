@@ -1,0 +1,41 @@
+new Drawing.Pallette(2) => pallette
+pallette.set(0, new Drawing.RGB(0, 0, 0))
+pallette.set(1, new Drawing.RGB(139, 232, 164))
+pallette.set(2, new Drawing.RGB(130, 130, 130))
+pallette.set(3, new Drawing.RGB(255, 255, 255))
+new Drawing(1000, 1000, pallette) => drawing
+
+
+# person standing #
+drawing.ellipse(500, 100, 100, 100, 1, yes)
+drawing.rectangle(485, 140, 30, 50, 1, yes)
+drawing.rectangle(430, 190, 140, 250, 1, yes)
+drawing.rectangle(430, 440, 35, 300, 1, yes)
+drawing.rectangle(535, 440, 35, 300, 1, yes)
+drawing.polygon(
+    [430, 430, 360, 360], [190, 250, 360, 300], 1, yes
+)
+drawing.polygon(
+    [570, 570, 640, 640], [190, 250, 360, 300], 1, yes
+)
+drawing.rectangle(360, 300, 31, 150, 1, yes)
+drawing.rectangle(610, 300, 31, 150, 1, yes)
+# end person #
+
+drawing.rectangle(0, 740, 1000, 260, 2, yes) # ground #
+
+dig drawStar plant tool(x, y) {
+    drawing.polygon([x, x + 10, x + 50, x + 10, x, x - 10, x - 50, x - 10], [
+        y - 50, y - 10, y, y + 10, y + 50, y + 10, y, y - 10
+    ], 3, yes)
+}
+
+drawStar(50, 100) # stars #
+drawStar(200, 450)
+drawStar(800, 350)
+drawStar(900, 200) # end stars #
+
+drawing.ellipse(250, 150, 100, 100, 3, yes, math.constants.pi / 2, 3 * math.constants.pi / 2)
+drawing.ellipse(250, 150, 50, 100, 0, yes, math.constants.pi / 2, 3 * math.constants.pi / 2)
+
+h drawing

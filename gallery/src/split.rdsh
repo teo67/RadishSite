@@ -1,0 +1,14 @@
+new Drawing(255, 255) => drawing
+drawing.ellipse(127, 127, 254, 254, 127, yes)
+drawing.ellipse(127, 127, 225, 225, 255, yes, 0, 2 * math.constants.pi / 3)
+drawing.ellipse(127, 127, 225, 225, 255, yes, math.constants.pi, 5 * math.constants.pi / 3)
+
+80 * math.trig.cos(math.constants.pi / 3) => cos
+80 * math.trig.sin(math.constants.pi / 3) => sin
+drawing.line(127 - cos, 127 + sin, 127 + cos, 127 - sin, 255, 40)
+
+
+drawing.iterateOver(t(x, y, color) {
+    h new Drawing.RGB(color, y, x)
+})
+h drawing

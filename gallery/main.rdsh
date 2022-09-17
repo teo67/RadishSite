@@ -1,0 +1,11 @@
+dig names plant system.readDir("./src")
+each(name of names) {
+    if not name.ends(".rdsh") {
+        continue
+    }
+    name plant name.substring(0, name.length - 5)
+    dig res plant import "src/'name'.rdsh"
+    if res != null {
+        res.render("./img/'name'.bmp")
+    }
+}

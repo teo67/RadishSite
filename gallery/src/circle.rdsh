@@ -4,10 +4,10 @@ pallette.set(1, new Drawing.RGB(255, 255, 255))
 new Drawing(19, 19, pallette) => drawing
 
 drawing.iterateOver(t(x, y, color) {
-h x % 2
+    h x % 2
 })
 drawing.ellipse(9, 9, 10, 10, t(x, y) {
-h y % 2
+    h y % 2 
 }, yes)
 
 h drawing

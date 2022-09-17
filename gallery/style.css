@@ -1,0 +1,149 @@
+@media screen and (orientation: portrait) {
+    section#gal section.gallery img {
+        width: 96vw;
+    }
+    section#gal section.gallery p {
+        display: none;
+    }
+    section#gal section.gallery img:hover {
+        width: 100vw;
+        margin-left: -2vw;
+    }
+    main h2#warning {
+        display: block;
+    }
+}
+h2 {
+    text-align: center;
+        margin-bottom: 4vw;
+        font-size: 2.5vh;
+        color: #2A5A39;
+        background-color: #4DA167;
+        width: 90vw;
+        margin-left: 5vw;
+        padding: 2vw;
+        border-radius: 4vw;
+}
+h2#warning {
+    display: none;
+}
+section#gal {
+    width: 100vw;
+}
+section#gal section img {
+    display: inline-block;
+    width: 50vw;
+    image-rendering: pixelated;
+    transition: all ease 0.3s;
+}
+section#gal section p {
+    background-color: #4DA167;
+    display: inline-block;
+    width: 43vw;
+    font-family: Tahoma;
+    padding: 2vw;
+    margin-left: 3vw;
+    vertical-align: top;
+    height: 100%;
+    color: #2A5A39;
+    border: 0.4vw solid #2A5A39;
+    font-size: 1vw;
+    transition: all ease 0.3s;
+    border-radius: 1vw;
+}
+section#gal section.gallery {
+    background-color: rgba(152, 39, 69, 0.8);
+    padding: 2vw;
+    display: block;
+    margin-bottom: 4vw;
+    border-radius: 2vw;
+    width: 100vw;
+    transition: all ease 0.5s;
+}
+section#gal section.gallery:hover {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: 98vw;
+    margin-left: 1vw;
+    background-color: rgba(221, 167, 123, 0.2);
+}
+section#gal section img:hover {
+    width: 54vw;
+    margin-left: -1vw;
+}
+section#gal section img:hover + p {
+    margin-left: 1vw;
+    padding: 1.5vw;
+    width: 42vw;
+}
+section#gal section p:hover {
+    margin-left: 2vw;
+    margin-top: 1vw;
+    color: #8A1B66; 
+    background-color: #DDA77B;
+    border-color: #8A1B66;
+}
+section#gal section p span {
+    opacity: 0;
+    transition: all ease-in 0.2s;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+section#gal section p:hover span {
+    opacity: 1;
+    background-color: #8A1B66;
+    color: #DDA77B;
+    border-radius: 1vw;
+    padding: 0.3vw;
+    padding-top: 0.1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-left: 1vw;
+    cursor: pointer;
+    border: 1px solid #DDA77B;
+}
+section#gal section p::before {
+    content: "Source Code";
+    display: block;
+    background-color: #2A5A39;
+    color: #4DA167;
+    text-align: center;
+    border-radius: 0.4vw;
+    padding: 0.5vw;
+    margin-bottom: 1vw;
+    transition: all ease 0.3s;
+}
+section#gal section p::after {
+    content: "Note: harvested drawing must be rendered to produce a file";
+    display: block;
+    background-color: #2A5A39;
+    color: #4DA167;
+    text-align: center;
+    border-radius: 0.4vw;
+    padding: 0.5vw;
+    margin-top: 1vw;
+    transition: all ease 0.3s;
+}
+section#gal section p:hover::before {
+    background-color: #8A1B66;
+    color: #DDA77B;
+}
+section#gal section p:hover::after {
+    background-color: #8A1B66;
+    color: #DDA77B;
+}
+section#gal section p span:hover {
+    color: #8A1B66;
+    background-color: #DDA77B;
+    border-width: 1px;
+    border-color: #8A1B66;
+}
+section#gal section p span::after {
+    display: none;
+    content: " { copied! }";
+    color: #4DA167;
+}
+section#gal section p span.copied::after {
+    display: inline;
+}
