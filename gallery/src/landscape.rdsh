@@ -1,0 +1,37 @@
+dig drawing plant new Drawing(2000, 2000)
+drawing.iterateOver(t(x, y) {
+    h new Drawing.RGB(255 - x / 10, y / 10, x / 10)
+})
+drawing.polygon([0, 900, 1999, 1999, 0], [1500, 1400, 1450, 1999, 1999], new Drawing.RGB(0, 127, 0), yes)
+drawing.polygon(
+    [0, 500, 600, 700, 1100, 1150, 1900, 1999, 1999, 0], 
+    [1750, 1575, 1550, 1650, 1600, 1100, 1600, 1700, 1999, 1999],
+    new Drawing.RGB(120, 120, 120), yes
+)
+drawing.polygon(
+    [0, 500, 600, 700, 1100, 1325, 1375, 1900, 1999, 1999, 0],
+    [1800, 1750, 1600, 1675, 1700, 800, 800, 1725, 1800, 1999, 1999],
+    new Drawing.RGB(255, 255, 255), yes
+)
+drawing.ellipse(500, 500, 600, 600, t(x, y) {
+    h new Drawing.RGB(y / 5, x / 5, 255 - x / 5)
+}, yes, math.constants.pi / 4, 3 * math.constants.pi / 2)
+
+d star p t(x, y, size) {
+    drawing.ellipse(x, y, size, size, new Drawing.RGB(0, 255, 100), yes)
+}
+
+d red p new Drawing.RGB(222, 53, 83)
+drawing.line(1325, 800, 1350, 750, red, 5)
+drawing.line(1375, 800, 1350, 750, red, 5)
+drawing.line(1350, 750, 1350, 700, red, 5)
+drawing.line(1325, 725, 1350, 700, red, 5)
+drawing.line(1375, 725, 1350, 700, red, 5)
+drawing.ellipse(1350, 675, 50, 50, red, yes)
+star(1500, 600, 25)
+star(1300, 100, 50)
+star(300, 1300, 60)
+star(800, 800, 50)
+star(50, 50, 25)
+
+h drawing
