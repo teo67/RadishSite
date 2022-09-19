@@ -1,0 +1,17 @@
+dig drawing plant new Drawing(201, 201)
+dig center p 100
+dig star plant tool(outer, inner, color, starter) {
+    dig xs p []
+    dig ys p []
+    for 0 => i, i < 5, i++ {
+        xs.push(math.trig.cos(i * 2 * math.constants.pi / 5 + starter) * outer + center)
+        ys.push(math.trig.sin(i * 2 * math.constants.pi / 5 + starter) * outer + center)
+        xs.push(math.trig.cos(i * 2 * math.constants.pi / 5 + math.constants.pi / 5 + starter) * inner + center)
+        ys.push(math.trig.sin(i * 2 * math.constants.pi / 5 + math.constants.pi / 5 + starter) * inner + center)
+    }
+    drawing.polygon(xs, ys, color, yes)
+}
+for 100 => i, i >= 10, i -= 0.2 {
+    star(i, i / 2, new Drawing.RGB(i * 1.5, 255 - i * 2, 255 - i), math.constants.pi * i / 50)
+}
+h drawing
