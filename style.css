@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Tahoma;
+    font-family: "Tahoma";
     box-sizing: border-box;
 }
 
@@ -199,7 +199,7 @@ body main p.code {
     display: inline-block;
     max-width: 100%;
     font-weight: lighter;
-    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+    font-family: "Lucida Console"; 
     font-size: 75%;
     line-height: 150%;
     color: #E0E0E0;

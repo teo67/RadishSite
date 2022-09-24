@@ -53,7 +53,7 @@ section#gal section p {
     background-color: #4DA167;
     display: inline-block;
     width: 43vw;
-    font-family: Tahoma;
+    font-family: "Tahoma";
     padding: 2vw;
     margin-left: 3vw;
     vertical-align: top;
@@ -159,4 +159,27 @@ section#gal section p span::after {
 }
 section#gal section p span.copied::after {
     display: inline;
+}
+button#loadmore {
+    background-color: #2A5A39;
+    border: 0.5vw solid #4DA167;
+    color: #4DA167;
+    border-radius: 2vw;
+    width: 40vw;
+    padding: 1vw;
+    margin-left: 30vw;
+    font-size: 3vh;
+    transition: all ease 0.5s;
+}
+button#loadmore:not(.unavailable) {
+    cursor: pointer;
+}
+button#loadmore:not(.unavailable):hover {
+    background-color: #4DA167;
+    border-color: #2A5A39;
+    border-radius: 1.25vw;
+    color: #2A5A39;
+}
+button#loadmore.unavailable {
+    opacity: 0.35;
 }
