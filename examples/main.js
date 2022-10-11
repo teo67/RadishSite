@@ -12,12 +12,16 @@ const init = async () => {
 }
 
 const read = async() => {
-    if(files.length - next <= 5) {
+    if(files.length - 1 == next) {
         loadMore.classList.add("unavailable");
     }
-    for(let i = next; i < Math.min(next + 5, files.length); i++) {
-        const asJson = await (await fetch(files[i])).json();
-        const item = atob(asJson.content)
+    let item = "";
+    try {   
+        const asJson = await (await fetch(files[next])).json();
+        item = atob(asJson.content)
+    } catch(e) {
+        item = "There was an error fetching the content from GitHub. See below:\n" + e;
+    }
         const lines = item.split("\n");
         const table = document.createElement("table");
         table.onclick = () => {
@@ -46,7 +50,6 @@ const read = async() => {
             tbody.appendChild(tr);
         }
         texts.appendChild(table);
-    }
 }
 
 init().then(read).then(() => {
@@ -54,7 +57,7 @@ init().then(read).then(() => {
         if(loadMore.classList.contains("unavailable")) {
             return;
         }
-        next += 5;
+        next++;
         read();
     }
 });
