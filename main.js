@@ -1,8 +1,8 @@
 const leaves = document.getElementById("leaves");
 let currentCopied = null;
-const copy = (obj, ignore = false) => {
-    if(ignore) {
-        navigator.clipboard.writeText(obj.innerText);
+const copy = (obj, override = null) => {
+    if(override !== null) {
+        navigator.clipboard.writeText(override);
     } else {
         navigator.clipboard.writeText(obj.parentElement.innerText.slice(0, obj.parentElement.innerText.indexOf("copy text")));  
     }
