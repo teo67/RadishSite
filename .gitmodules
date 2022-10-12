@@ -1,0 +1,3 @@
+[submodule "examples/files"]
+	path = examples/files
+	url = https://github.com/teo67/Radish-Examples.git

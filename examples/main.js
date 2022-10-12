@@ -1,27 +1,6 @@
 const texts = document.getElementById("examples");
-const loadMore = document.getElementById("loadmore");
-let files = [];
-let next = 0;
-
-const init = async () => {
-    const raw = await fetch("https://api.github.com/repos/teo67/Radish/contents/examples?ref=main");
-    const json = await raw.json();
-    for(const item of json) {
-        files.push(item.git_url);
-    }
-}
-
-const read = async() => {
-    if(files.length - 1 == next) {
-        loadMore.classList.add("unavailable");
-    }
-    let item = "";
-    try {   
-        const asJson = await (await fetch(files[next])).json();
-        item = atob(asJson.content)
-    } catch(e) {
-        item = "There was an error fetching the content from GitHub. See below:\n" + e;
-    }
+    setupreader("loadmore", 10, "files.json", async fileName => {
+        const item = await (await fetch(`files/${fileName}`)).text();
         const lines = item.split("\n");
         const table = document.createElement("table");
         table.onclick = () => {
@@ -50,14 +29,4 @@ const read = async() => {
             tbody.appendChild(tr);
         }
         texts.appendChild(table);
-}
-
-init().then(read).then(() => {
-    loadMore.onclick = () => {
-        if(loadMore.classList.contains("unavailable")) {
-            return;
-        }
-        next++;
-        read();
-    }
-});
+    });
