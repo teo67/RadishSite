@@ -1,6 +1,6 @@
 const texts = document.getElementById("examples");
     setupreader("loadmore", 10, "files.json", async fileName => {
-        const item = await (await fetch(`files/${fileName}`)).text();
+        const item = await (await fetch(`../Radish-Examples/${fileName}`)).text();
         const lines = item.split("\n");
         const table = document.createElement("table");
         table.onclick = () => {
