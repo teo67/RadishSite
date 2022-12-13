@@ -9,6 +9,7 @@ const texts = document.getElementById("examples");
         table.classList.add("example");
         const tbody = document.createElement("tbody");
         table.appendChild(tbody);
+        let inComment = false;
         for(let j = 0; j < lines.length; j++) {
             const tr = document.createElement("tr");
             const lineNumber = document.createElement("td");
@@ -21,8 +22,23 @@ const texts = document.getElementById("examples");
                 modLine = modLine.substring(1);
                 numTabs++;
             }
+            let newMod = "";
+            if(inComment) {
+                newMod += "<em>";
+            }
+            for(let k = 0; k < modLine.length; k++) {
+                if(modLine[k] == "#") {
+                    inComment = !inComment;
+                    if(!inComment) {
+                        newMod += "#</em>";
+                        continue;
+                    }
+                    newMod += "<em>";
+                }
+                newMod += modLine[k];
+            }
             content.style.paddingLeft = `${numTabs + 2}vw`;
-            content.innerText = modLine;
+            content.innerHTML = newMod;
             content.classList.add("content");
             tr.appendChild(lineNumber);
             tr.appendChild(content);

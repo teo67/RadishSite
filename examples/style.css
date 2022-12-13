@@ -61,6 +61,12 @@ table.example tbody tr td.lineNumber {
   width: 4vh;
   text-align: center;
 }
+table.example tbody tr td.content em {
+  font-family: inherit;
+  font-weight: bold;
+  color: #544461;
+  opacity: 0.7;
+}
 
 table.example::before {
     font-size: 0vh;
@@ -79,6 +85,10 @@ table.example:hover {
 
 table.example:hover tr td {
     color: #DDA77B !important;
+}
+
+table.example:hover tr td.content em {
+  color: #DDA77B !important;
 }
 
 table.example:hover::before {
